@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MECHANIC CENTER</title>
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #e6f9e6;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #2e7d32;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        font-weight: bold;
+    }
+    main {
+        max-width: 800px;
+        margin: 20px auto;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    details {
+        background: #d9fdd3;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+    summary {
+        font-size: 1.1em;
+        font-weight: bold;
+        color: #2e7d32;
+        cursor: pointer;
+        outline: none;
+    }
+    .service-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px;
+        margin: 5px 0;
+        background: #f6fff6;
+        border: 1px solid #b2dfb2;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+    .service-item:hover {
+        background: #c8f7c5;
+    }
+    .service-item.selected {
+        background: #4caf50;
+        color: white;
+    }
+    .total {
+        background: #2e7d32;
+        color: white;
+        padding: 12px;
+        border-radius: 5px;
+        font-weight: bold;
+        text-align: center;
+        font-size: 1.1em;
+        margin-top: 15px;
+    }
+    button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        background-color: #4caf50;
+        border: none;
+        border-radius: 6px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    button:hover {
+        background-color: #66bb6a;
+    }
+    .section-title {
+        font-weight: bold;
+        color: #1b5e20;
+        background: #c8f7c5;
+        padding: 6px 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+        margin-bottom: 6px;
+        border-left: 5px solid #4caf50;
+        font-size: 0.95em;
+    }
+    @media (max-width: 600px) {
+        main {
+            margin: 10px;
+            padding: 10px;
+        }
+        .service-item {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header>KALKULATOR MECHANIC CENTER</header>
+
+<main>
+    <details>
+        <summary>Service dalam Bengkel</summary>
+        <div class="service-list">
+            <div class="service-item" data-harga="5000">Repair Mesin <span>$5000</span></div>
+            <div class="service-item" data-harga="2500">Repair Body & Mesin <span>$2500</span></div>
+        </div>
+    </details>
+
+    <details>
+        <summary>Service luar Bengkel</summary>
+        <div class="service-list">
+            <div class="section-title">🗺️ LS</div>
+            <div class="service-item" data-harga="3000">LS - Repair Mesin <span>$3000</span></div>
+            <div class="service-item" data-harga="5500">LS - Repair Body & Mesin <span>$5500</span></div>
+            
+            <div class="section-title">🗺️ LV</div>
+            <div class="service-item" data-harga="4500">LV - Repair Mesin <span>$4500</span></div>
+            <div class="service-item" data-harga="6000">LV - Repair Body & Mesin <span>$6000</span></div>
+            
+            <div class="section-title">🗺️ SF</div>
+            <div class="service-item" data-harga="5000">SF - Repair Mesin <span>$5000</span></div>
+            <div class="service-item" data-harga="6500">SF - Repair Body & Mesin <span>$6500</span></div>
+        </div>
+    </details>
+
+    <details>
+        <summary>Towing, Nitro, Toolskit, Neon</summary>
+        <div class="service-list">
+            <div class="section-title">🚚 Towing</div>
+            <div class="service-item" data-harga="1500">Jasa Towing <span>$1500</span></div>
+
+            <div class="section-title">💨 Nitro</div>
+            <div class="service-item" data-harga="7000">Nitro [x3] <span>$7000</span></div>
+            <div class="service-item" data-harga="9000">Nitro [x5] <span>$9000</span></div>
+            <div class="service-item" data-harga="15000">Nitro [x10] <span>$15000</span></div>
+
+            <div class="section-title">🧰 Toolskit</div>
+            <div class="service-item" data-harga="1500">Toolskit [x1] <span>$1500</span></div>
+            <div class="service-item" data-harga="3000">Toolskit [x2] <span>$3000</span></div>
+            <div class="service-item" data-harga="4500">Toolskit [x3] <span>$4500</span></div>
+
+            <div class="section-title">🎇 Neon</div>
+            <div class="service-item" data-harga="5000">Neon <span>$5000</span></div>
+        </div>
+    </details>
+
+    <details>
+        <summary>Modifikasi</summary>
+        <div class="service-list">
+            <div class="section-title">🧰 Eksterior</div>
+            <div class="service-item" data-harga="3000">Roof <span>$3000</span></div>
+            <div class="service-item" data-harga="3000">Hood <span>$3000</span></div>
+            <div class="service-item" data-harga="3000">Spoiler <span>$3000</span></div>
+            <div class="service-item" data-harga="3000">Velg / Wheels <span>$3000</span></div>
+            <div class="service-item" data-harga="3000">Bumper Depan / Front <span>$3000</span></div>
+            <div class="service-item" data-harga="3000">Bumper Belakang / Rear <span>$3000</span></div>
+            <div class="service-item" data-harga="3000">Side Skirt / Bawah Pintu <span>$3000</span></div>
+
+            <div class="section-title">⚙️ Performa</div>
+            <div class="service-item" data-harga="3000">Knalpot / Exhaust <span>$3000</span></div>
+            <div class="service-item" data-harga="5000">Hydraulics <span>$5000</span></div>
+        </div>
+    </details>
+
+    <details>
+        <summary>Paket Modifikasi</summary>
+        <div class="service-list">
+            <div class="service-item" data-harga="70000">Full Modif Rata Kanan <span>$70000</span></div>
+            <div class="service-item" data-harga="55000">Full Modif <span>$55000</span></div>
+            <div class="service-item" data-harga="45000">Full Body <span>$45000</span></div>
+        </div>
+    </details>
+
+    <details>
+        <summary>Cat & Warna</summary>
+        <div class="service-list">
+            <div class="service-item" data-harga="2500">Repaint / Spray <span>$2500</span></div>
+            <div class="service-item" data-harga="3000">Paint Job <span>$3000</span></div>
+        </div>
+    </details>
+
+    <div class="total">
+        TOTAL KESELURUHAN : <span id="totalHarga">$0</span>
+    </div>
+
+    <button onclick="resetSemua()">Reset Semua</button>
+</main>
+
+<script>
+    let totalHarga = 0;
+
+    // Klik item servis
+    document.querySelectorAll('.service-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const harga = parseInt(item.dataset.harga);
+            if (item.classList.contains('selected')) {
+                item.classList.remove('selected');
+                totalHarga -= harga;
+            } else {
+                item.classList.add('selected');
+                totalHarga += harga;
+            }
+            document.getElementById('totalHarga').textContent = `$${totalHarga}`;
+        });
+    });
+
+    // Tombol reset semua
+    function resetSemua() {
+        document.querySelectorAll('.service-item').forEach(item => item.classList.remove('selected'));
+        totalHarga = 0;
+        document.getElementById('totalHarga').textContent = `$0`;
+    }
+
+    // Saat halaman pertama dibuka, semua details tertutup
+    window.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('details').forEach(detail => detail.removeAttribute('open'));
+    });
+</script>
+
+</body>
+</html>
